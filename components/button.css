@@ -1,0 +1,20 @@
+.btn {
+  display: inline-block;
+  background-color: #355fe5;
+  color: #fff;
+  padding: 12.5px 25px;
+  border-radius: 12.5px;
+}
+
+.btn-link {
+  transition: translate 0.27s, opacity 0.27s;
+}
+
+.btn-link:hover {
+  translate: 1.25px 1.25px;
+  opacity: 0.95;
+}
+
+.btn-link:active {
+  translate: 0 0;
+}

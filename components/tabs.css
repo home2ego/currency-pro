@@ -1,0 +1,53 @@
+.tabs {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.tabs__list {
+  display: flex;
+  column-gap: 30px;
+}
+
+.tabs__tab-wrapper {
+  margin: 0 auto;
+}
+
+.tabs__tab {
+  cursor: pointer;
+
+  font-weight: 500;
+  padding: 10px 0;
+
+  border-bottom: 3px solid transparent;
+
+  transition: border-bottom-color 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.tabs__tab:not(.active) {
+  border-bottom-color: #0a112f;
+}
+
+.tabs__tab.active {
+  border-bottom-color: #355fe5;
+}
+
+.tabs__content-wrapper {
+  position: relative; /* .offsetLeft property for every `tabs__tab-content` will be calculated properly in JS */
+
+  display: grid;
+  grid-template-columns: 100% 100% 100%;
+  overflow-x: hidden;
+
+  min-height: 200px;
+  background-color: #edf2f4;
+
+  border-radius: 15px;
+}
+
+.tabs__tab-content {
+  padding: 20px;
+}

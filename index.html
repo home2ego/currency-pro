@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CurrencyPro</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <img src="/logo.svg" alt="Logo CurrencyPro" width="176" height="40" />
+
+      <nav>
+        <a href="#about-us" id="about-link" class="header__link">About us</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="layout-section">
+        <div class="container"></div>
+      </section>
+
+      <section id="about-us" class="layout-section">
+        <div class="container">
+          <div class="tabs">
+            <div class="tabs__tab-wrapper">
+              <ul class="tabs__list">
+                <li>
+                  <button type="button" class="tabs__tab ax-button active" aria-controls="goals-content">
+                    Our goals
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="tabs__tab ax-button" aria-controls="team-content">The team</button>
+                </li>
+                <li>
+                  <button type="button" class="tabs__tab ax-button" aria-controls="others-say-content">
+                    What others say
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            <div class="tabs__content-wrapper">
+              <p id="goals-content" class="tabs__tab-content">Our goals content here</p>
+              <p id="team-content" class="tabs__tab-content">The team content here</p>
+              <p id="others-say-content" class="tabs__tab-content">What others say content here</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer">
+          <div class="footer__side">
+            <p>&copy; 2024. All Rights Reserved.</p>
+          </div>
+          <div class="footer__media"></div>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

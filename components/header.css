@@ -1,0 +1,22 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 50px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.header__link {
+  display: inline-block;
+  font-weight: 500;
+  padding: 10px 0;
+
+  border-bottom: 3px solid #0a112f;
+
+  transition: border-bottom-color 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.header__link:hover {
+  border-bottom-color: #355fe5;
+}
