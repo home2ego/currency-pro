@@ -1,12 +1,9 @@
 // add UI tabs
 
 const tabs = document.querySelectorAll('.tabs__tab');
+const tabsContent = document.querySelectorAll('.tabs__tab-content');
 const tabsContentWrapper = document.querySelector('.tabs__content-wrapper');
 const tabsList = document.querySelector('.tabs__list');
-
-const tabsContentOffsetLeft = [...document.querySelectorAll('.tabs__tab-content')].map(
-  (tabContent) => tabContent.offsetLeft
-);
 
 const setActiveTab = (tab) => {
   document.querySelector('.tabs__tab.active').classList.remove('active');
@@ -17,6 +14,7 @@ let lastIndex = 0;
 
 tabsList.addEventListener('click', (event) => {
   const clickedTab = event.target.closest('.tabs__tab');
+
   if (!clickedTab) {
     // ignore clicks outside the `.tabs__tab`
     return;
@@ -32,7 +30,7 @@ tabsList.addEventListener('click', (event) => {
   lastIndex = index;
 
   tabsContentWrapper.scrollTo({
-    left: tabsContentOffsetLeft[index],
+    left: tabsContent[index].offsetLeft,
     behavior: 'smooth',
   });
 
@@ -52,7 +50,7 @@ about.addEventListener('click', () => {
   lastIndex = 0;
 
   tabsContentWrapper.scrollTo({
-    left: tabsContentOffsetLeft[0],
+    left: tabsContent[0].offsetLeft,
   });
 
   setActiveTab(tabs[0]);
