@@ -80,7 +80,7 @@ about.addEventListener('click', () => {
   }
 
   tabsContentWrapper.scrollTo({
-    left: tabsContent[0].offsetLeft,
+    left: 0,
   });
 
   setActiveTab(tabs[0]);
