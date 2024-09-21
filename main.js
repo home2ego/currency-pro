@@ -1,4 +1,8 @@
+// TABS
+
 // add UI tabs
+let isScrolled = false;
+let lastIndex = 0;
 
 const tabs = document.querySelectorAll('.tabs__tab');
 const tabsContent = document.querySelectorAll('.tabs__tab-content');
@@ -9,8 +13,6 @@ const setActiveTab = (tab) => {
   document.querySelector('.tabs__tab.active').classList.remove('active');
   tab.classList.add('active');
 };
-
-let lastIndex = 0;
 
 tabsList.addEventListener('click', (event) => {
   const clickedTab = event.target.closest('.tabs__tab');
@@ -29,6 +31,8 @@ tabsList.addEventListener('click', (event) => {
 
   lastIndex = index;
 
+  isScrolled = true;
+
   tabsContentWrapper.scrollTo({
     left: tabsContent[index].offsetLeft,
     behavior: 'smooth',
@@ -37,11 +41,20 @@ tabsList.addEventListener('click', (event) => {
   setActiveTab(clickedTab);
 });
 
+tabsContentWrapper.addEventListener('scrollend', () => {
+  // Reset the `isScrolled` after the scroll finishes
+  isScrolled = false;
+});
+
 // reset UI tabs by scrolling tabs or swiping across tabs on mobile devices
 
 tabsContentWrapper.addEventListener(
   'scroll',
   () => {
+    if (isScrolled) {
+      return;
+    }
+
     const index = Math.round(tabsContentWrapper.scrollLeft / tabsContentWrapper.offsetWidth);
 
     if (lastIndex === index) {
