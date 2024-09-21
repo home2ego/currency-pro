@@ -7,13 +7,14 @@
   margin: 0 auto;
 }
 
-.tabs__list {
-  display: flex;
-  column-gap: 30px;
-}
-
 .tabs__tab-wrapper {
   margin: 0 auto;
+}
+
+.tabs__list {
+  display: flex;
+  column-gap: clamp(0px, 3.75vw, 30px);
+  font-size: clamp(16px, 4vw, 18px);
 }
 
 .tabs__tab {
@@ -47,11 +48,18 @@
   background-color: #edf2f4;
 
   border-radius: 15px;
+  font-size: clamp(16px, 4vw, 18px);
 }
 
 .tabs__tab-content {
-  padding: 20px;
+  padding: clamp(0px, 3vw, 20px);
 
   scroll-snap-align: start;
   scroll-snap-stop: always;
+}
+
+@media (max-width: 450px) {
+  .tabs__content-wrapper {
+    border-radius: 0;
+  }
 }
