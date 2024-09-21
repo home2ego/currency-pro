@@ -40,7 +40,8 @@
 
   display: grid;
   grid-template-columns: 100% 100% 100%;
-  overflow-x: hidden;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
 
   min-height: 200px;
   background-color: #edf2f4;
@@ -50,4 +51,7 @@
 
 .tabs__tab-content {
   padding: 20px;
+
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }

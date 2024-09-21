@@ -37,6 +37,25 @@ tabsList.addEventListener('click', (event) => {
   setActiveTab(clickedTab);
 });
 
+// reset UI tabs by scrolling tabs or swiping across tabs on mobile devices
+
+tabsContentWrapper.addEventListener(
+  'scroll',
+  () => {
+    const index = Math.round(tabsContentWrapper.scrollLeft / tabsContentWrapper.offsetWidth);
+
+    if (lastIndex === index) {
+      // skip the rest of the code if `lastIndex` matches `index`
+      return;
+    }
+
+    lastIndex = index;
+
+    setActiveTab(tabs[index]);
+  },
+  { passive: true }
+);
+
 // reset UI tabs by clicking the `About us` link
 
 const about = document.querySelector('#about-link');
@@ -46,8 +65,6 @@ about.addEventListener('click', () => {
     // skip the rest of the code if `lastIndex` matches `0`
     return;
   }
-
-  lastIndex = 0;
 
   tabsContentWrapper.scrollTo({
     left: tabsContent[0].offsetLeft,
