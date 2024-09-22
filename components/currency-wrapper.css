@@ -1,0 +1,63 @@
+.currency-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+
+.currency-wrapper h1 {
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 1.1;
+
+  text-align: center;
+}
+
+.currency-wrapper h2 {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #415a77;
+
+  text-align: center;
+}
+
+.currency-wrapper h1 em {
+  color: #355fe5;
+}
+
+.cards-wrapper h3 {
+  font-size: 28px;
+  font-weight: 400;
+
+  margin-bottom: 20px;
+}
+
+.cards {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 30px 15px;
+}
+
+.cards .card {
+  background-color: #fafafa;
+  padding: 15px 20px;
+  border-radius: 16px;
+  cursor: pointer;
+
+  transition: box-shadow 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.cards .card:hover {
+  box-shadow: 12px 12px 12px rgba(0 0 0 / 10%);
+}
+
+.card__name {
+  font-size: 14px;
+  color: #415a77;
+}
+
+.currency-wrapper__btn {
+  width: max-content;
+  align-self: flex-end;
+}

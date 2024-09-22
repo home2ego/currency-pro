@@ -5,8 +5,6 @@
   background-color: #f8f9fa;
 
   scroll-behavior: smooth;
-
-  /* color: #5f738d; */
 }
 
 * {
@@ -22,6 +20,8 @@ header {
 }
 
 h1,
+h2,
+h3,
 p {
   margin: 0;
 }
@@ -40,4 +40,14 @@ a {
 button,
 input {
   font: inherit;
+}
+
+em {
+  font-style: inherit;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #355fe5;
+  outline-offset: 2px;
 }

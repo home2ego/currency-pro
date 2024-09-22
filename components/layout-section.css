@@ -1,10 +1,9 @@
 .layout-section {
-  margin-bottom: 30px;
+  padding: 40px 0;
 }
 
 .layout-section:first-child {
   background-color: #edf2f4;
-  height: 500px;
 }
 
 @media (max-width: 450px) {
