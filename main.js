@@ -1,3 +1,31 @@
+// CURRENCY
+
+// make currency active after click
+function setActiveCard(event, active) {
+  const clickedCard = event.target.closest('.card');
+
+  if (!clickedCard) {
+    return;
+  }
+
+  active?.classList.remove('active');
+  clickedCard.classList.add('active');
+}
+
+const baseCurrency = document.querySelector('#base-currency');
+const targetCurrency = document.querySelector('#target-currency');
+
+baseCurrency.addEventListener('click', (event) => {
+  const active = document.querySelector('#base-currency .card.active');
+
+  setActiveCard(event, active);
+});
+targetCurrency.addEventListener('click', (event) => {
+  const active = document.querySelector('#target-currency .card.active');
+
+  setActiveCard(event, active);
+});
+
 // TABS
 
 // add UI tabs

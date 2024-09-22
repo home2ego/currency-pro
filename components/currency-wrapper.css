@@ -45,11 +45,19 @@
   border-radius: 16px;
   cursor: pointer;
 
-  transition: box-shadow 0.3s cubic-bezier(0, 0, 0.2, 1);
+  transition-property: box-shadow, border-color;
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+
+  border: 3px solid transparent;
 }
 
 .cards .card:hover {
   box-shadow: 12px 12px 12px rgba(0 0 0 / 10%);
+}
+
+.cards .card.active {
+  border-color: #355fe5;
 }
 
 .card__name {
@@ -60,4 +68,6 @@
 .currency-wrapper__btn {
   width: max-content;
   align-self: flex-end;
+
+  margin: 10px 0;
 }
