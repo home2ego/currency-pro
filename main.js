@@ -1,17 +1,53 @@
-// Cache all the selectors to avoid repeated DOM searches
 const baseCurrency = document.querySelector('#base-currency');
 const targetCurrency = document.querySelector('#target-currency');
 
-// Function to activate a new card and disable already selected
-function setActiveCard(event, container) {
-  const clickedCard = event.target.closest('.card');
-  if (!clickedCard) return; // Exit if click is not on a card
+const baseCards = [...baseCurrency.querySelectorAll('.card')];
+const targetCards = [...targetCurrency.querySelectorAll('.card')];
 
+// Function to handle active card in the corresponding container
+function handleActiveCard(container, clickedCard) {
   const active = container.querySelector('.card.active');
   active?.classList.remove('active');
   clickedCard.classList.add('active');
 }
 
-// Combine event listeners for both containers
-baseCurrency.addEventListener('click', (event) => setActiveCard(event, baseCurrency));
-targetCurrency.addEventListener('click', (event) => setActiveCard(event, targetCurrency));
+// Function to add the active state to a new card and disable corresponding card in the target container
+function setBaseCurrencyCard(event) {
+  const clickedCard = event.target.closest('.card');
+  if (!clickedCard) return; // Exit if click is not on a card
+
+  // Get the index of the clicked card
+  const index = baseCards.indexOf(clickedCard);
+
+  // Find the corresponding card in the target container by index
+  const targetCard = targetCards[index];
+
+  // Enable previously disabled card in the target container
+  const disabledTargetCard = targetCurrency.querySelector('.card[disabled]');
+  if (disabledTargetCard) {
+    disabledTargetCard.removeAttribute('disabled');
+  }
+
+  // Disable the corresponding card in the target container
+  if (targetCard) {
+    targetCard.setAttribute('disabled', 'disabled'); // Disable the new corresponding card
+  }
+
+  // If the target card is active, remove its active state
+  if (targetCard.classList.contains('active')) {
+    targetCard.classList.remove('active');
+  }
+
+  handleActiveCard(baseCurrency, clickedCard);
+}
+
+// Function to add the active state to a new card in the target currency container
+function setTargetCurrencyCard(event) {
+  const clickedCard = event.target.closest('.card');
+  if (!clickedCard) return; // Exit if click is not on a card
+
+  handleActiveCard(targetCurrency, clickedCard);
+}
+
+baseCurrency.addEventListener('click', setBaseCurrencyCard);
+targetCurrency.addEventListener('click', setTargetCurrencyCard);
