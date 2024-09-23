@@ -1,13 +1,4 @@
 .layout-section {
   padding: 40px 0;
-}
-
-.layout-section:first-child {
   background-color: #edf2f4;
-}
-
-@media (max-width: 450px) {
-  .layout-section:last-child .container {
-    padding: 0;
-  }
 }

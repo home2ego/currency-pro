@@ -3,8 +3,6 @@
   font-size: 18px;
   color: #0a112f;
   background-color: #f8f9fa;
-
-  scroll-behavior: smooth;
 }
 
 * {
@@ -13,10 +11,6 @@
 
 body {
   margin: 0;
-}
-
-header {
-  border-bottom: 1px solid #e5e5e5;
 }
 
 h1,
@@ -44,6 +38,10 @@ input {
 
 em {
   font-style: inherit;
+}
+
+img {
+  vertical-align: bottom;
 }
 
 a:focus-visible,
