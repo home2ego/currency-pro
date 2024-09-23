@@ -1,5 +1,6 @@
 const baseCurrency = document.querySelector('#base-currency');
 const targetCurrency = document.querySelector('#target-currency');
+const trackBtn = document.querySelector('#track-btn');
 
 const baseCards = [...baseCurrency.querySelectorAll('.card')];
 const targetCards = [...targetCurrency.querySelectorAll('.card')];
@@ -39,6 +40,8 @@ function setBaseCurrencyCard(event) {
   }
 
   handleActiveCard(baseCurrency, clickedCard);
+
+  checkTrackButtonState();
 }
 
 // Function to add the active state to a new card in the target currency container
@@ -47,7 +50,22 @@ function setTargetCurrencyCard(event) {
   if (!clickedCard) return; // Exit if click is not on a card
 
   handleActiveCard(targetCurrency, clickedCard);
+
+  checkTrackButtonState();
 }
 
+// Function to check if both base and target currencies are selected
+function checkTrackButtonState() {
+  const baseActive = baseCurrency.querySelector('.card.active');
+  const targetActive = targetCurrency.querySelector('.card.active');
+
+  if (baseActive && targetActive) {
+    trackBtn.classList.remove('disabled'); // Enable the link by removing the class
+  } else {
+    trackBtn.classList.add('disabled'); // Disable the link by adding the class
+  }
+}
+
+// Event listeners for the card selections
 baseCurrency.addEventListener('click', setBaseCurrencyCard);
 targetCurrency.addEventListener('click', setTargetCurrencyCard);
