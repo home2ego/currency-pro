@@ -42,6 +42,9 @@ function setBaseCurrencyCard(event) {
 
   handleActiveCard(baseCurrency, clickedCard);
 
+  const baseValue = clickedCard.querySelector('[data-symbol]').dataset.symbol;
+  sessionStorage.setItem('baseValue', baseValue);
+
   checkTrackButtonState();
 }
 
@@ -51,6 +54,9 @@ function setTargetCurrencyCard(event) {
   if (!clickedCard) return; // Exit if click is not on a card
 
   handleActiveCard(targetCurrency, clickedCard);
+
+  const targetValue = clickedCard.querySelector('[data-symbol]').dataset.symbol;
+  sessionStorage.setItem('targetValue', targetValue);
 
   checkTrackButtonState();
 }

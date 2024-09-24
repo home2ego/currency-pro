@@ -15,7 +15,7 @@
   <body>
     <header class="header">
       <div class="container">
-        <a href="../index.html" aria-label="Go to homepage">
+        <a href="/" aria-label="Go to homepage">
           <img src="../logo.svg" alt="Logo CurrencyPro" width="176" height="40" />
         </a>
       </div>
@@ -29,8 +29,8 @@
 
             <div class="exchange__grid">
               <div>
-                <label for="base-currency">Base currency:</label>
-                <select id="base-currency">
+                <label for="base-exchange">Base currency:</label>
+                <select id="base-exchange">
                   <option value="USD">United States Dollar ($)</option>
                   <option value="EUR">Euro (€)</option>
                   <option value="GBP">Pound sterling (£)</option>
@@ -41,8 +41,8 @@
               </div>
 
               <div>
-                <label for="target-currency">Target currency:</label>
-                <select id="target-currency">
+                <label for="target-exchange">Target currency:</label>
+                <select id="target-exchange">
                   <option value="USD">United States Dollar ($)</option>
                   <option value="EUR">Euro (€)</option>
                   <option value="GBP">Pound sterling (£)</option>
@@ -94,5 +94,7 @@
         </div>
       </div>
     </footer>
+
+    <script type="module" src="./exchange.js"></script>
   </body>
 </html>
