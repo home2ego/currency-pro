@@ -61,13 +61,17 @@ function checkTrackButtonState() {
   const targetActive = targetCurrency.querySelector('.card.active');
 
   if (baseActive && targetActive) {
-    hintBtn.classList.add('disabled'); // Disable the hint by adding the class
+    hintBtn.classList.add('hidden'); // Hide the hint by adding the class
     trackBtn.classList.remove('disabled'); // Enable the link by removing the class
     trackBtn.removeAttribute('tabindex'); // Recover focus
+    trackBtn.removeAttribute('aria-disabled'); // Remove aria-disabled
+    hintBtn.setAttribute('aria-hidden', 'true'); // Hide hint from screen readers
   } else {
-    hintBtn.classList.remove('disabled'); // Enable the hint by removing the class
+    hintBtn.classList.remove('hidden'); // Show the hint by removing the class
     trackBtn.classList.add('disabled'); // Disable the link by adding the class
     trackBtn.setAttribute('tabindex', '-1'); // Remove focus
+    trackBtn.setAttribute('aria-disabled', 'true'); // Enable aria-disabled
+    hintBtn.setAttribute('aria-hidden', 'false'); // Make hint accessible again
   }
 }
 
