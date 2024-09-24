@@ -24,7 +24,7 @@
     <main>
       <section class="layout-section">
         <div class="container">
-          <div class="currency-wrapper">
+          <div class="currency">
             <h1>The safe and easy way to <em>exchange</em> your <em>money</em></h1>
 
             <h2>
@@ -94,8 +94,10 @@
               </div>
             </div>
 
-            <a href="#" id="track-btn" class="currency-wrapper__btn btn btn-link disabled"> Track exchange rate </a>
-            <small>* select a currency to active it</small>
+            <div class="currency__link-wrapper">
+              <a href="#" id="track-btn" class="btn btn-link disabled" tabindex="-1"> Track exchange rate </a>
+              <small class="currency__hint">* select a currency to activate</small>
+            </div>
           </div>
         </div>
       </section>

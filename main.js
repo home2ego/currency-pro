@@ -61,8 +61,10 @@ function checkTrackButtonState() {
 
   if (baseActive && targetActive) {
     trackBtn.classList.remove('disabled'); // Enable the link by removing the class
+    trackBtn.setAttribute('tabindex', '0');
   } else {
     trackBtn.classList.add('disabled'); // Disable the link by adding the class
+    trackBtn.setAttribute('tabindex', '-1');
   }
 }
 

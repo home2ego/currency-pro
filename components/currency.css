@@ -1,10 +1,10 @@
-.currency-wrapper {
+.currency {
   display: flex;
   flex-direction: column;
   row-gap: 30px;
 }
 
-.currency-wrapper h1 {
+.currency h1 {
   font-size: 42px;
   font-weight: 600;
   line-height: 1.1;
@@ -12,7 +12,7 @@
   text-align: center;
 }
 
-.currency-wrapper h2 {
+.currency h2 {
   font-size: 22px;
   font-weight: 400;
   line-height: 1.1;
@@ -21,7 +21,7 @@
   text-align: center;
 }
 
-.currency-wrapper h1 em {
+.currency h1 em {
   color: #355fe5;
 }
 
@@ -74,8 +74,16 @@
   color: #415a77;
 }
 
-.currency-wrapper__btn {
-  align-self: flex-end;
+.currency__link-wrapper {
+  display: flex;
+  justify-content: flex-end;
 
-  margin: 10px 0;
+  padding: 10px 0;
+  position: relative;
+}
+
+.currency__hint {
+  position: absolute;
+  bottom: -15px;
+  right: 0;
 }
