@@ -87,6 +87,9 @@
   bottom: -15px;
   right: 0;
 
+  font-size: 14px;
+  font-weight: 500;
+
   transition: opacity 0.3s cubic-bezier(0, 0, 0.2, 1);
 }
 
