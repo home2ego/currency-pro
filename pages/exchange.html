@@ -11,6 +11,7 @@
       content="CurrencyPro is a web application designed for fast and accurate currency conversion, leveraging real-time exchange rates."
     />
   </head>
+
   <body>
     <header class="header">
       <div class="container">
@@ -20,7 +21,47 @@
       </div>
     </header>
 
-    <main></main>
+    <main>
+      <section class="layout-section">
+        <div class="container">
+          <div class="exchange">
+            <p>Select the base currency and the target currency and we'll show you the conversion rate.</p>
+
+            <div class="exchange__grid">
+              <div>
+                <label for="base-currency">Base currency:</label>
+                <select id="base-currency">
+                  <option value="USD">United States Dollar ($)</option>
+                  <option value="EUR">Euro (€)</option>
+                  <option value="GBP">Pound sterling (£)</option>
+                  <option value="CHF">Swiss Franc (₣)</option>
+                  <option value="JPY">Japanese Yen (¥)</option>
+                  <option value="CNY">Chinese Yuan (¥)</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="target-currency">Target currency:</label>
+                <select id="target-currency">
+                  <option value="USD">United States Dollar ($)</option>
+                  <option value="EUR">Euro (€)</option>
+                  <option value="GBP">Pound sterling (£)</option>
+                  <option value="CHF">Swiss Franc (₣)</option>
+                  <option value="JPY">Japanese Yen (¥)</option>
+                  <option value="CNY">Chinese Yuan (¥)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="exchange__result">
+              <p>1</p>
+              <p>=</p>
+              <p id="exchange__conversion">1</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <footer>
       <div class="container">
