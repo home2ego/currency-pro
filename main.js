@@ -1,6 +1,7 @@
 const baseCurrency = document.querySelector('#base-currency');
 const targetCurrency = document.querySelector('#target-currency');
 const trackBtn = document.querySelector('#track-btn');
+const hintBtn = document.querySelector('#hint-btn');
 
 const baseCards = [...baseCurrency.querySelectorAll('.card')];
 const targetCards = [...targetCurrency.querySelectorAll('.card')];
@@ -60,11 +61,13 @@ function checkTrackButtonState() {
   const targetActive = targetCurrency.querySelector('.card.active');
 
   if (baseActive && targetActive) {
+    hintBtn.classList.add('disabled'); // Disable the hint by adding the class
     trackBtn.classList.remove('disabled'); // Enable the link by removing the class
-    trackBtn.setAttribute('tabindex', '0');
+    trackBtn.removeAttribute('tabindex'); // Recover focus
   } else {
+    hintBtn.classList.remove('disabled'); // Enable the hint by removing the class
     trackBtn.classList.add('disabled'); // Disable the link by adding the class
-    trackBtn.setAttribute('tabindex', '-1');
+    trackBtn.setAttribute('tabindex', '-1'); // Remove focus
   }
 }
 
