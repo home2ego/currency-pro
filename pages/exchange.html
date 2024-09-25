@@ -24,18 +24,14 @@
     <main>
       <section class="layout-section">
         <div class="container">
-          <div class="currency">
+          <div class="currency exchange">
             <h1>Currency<em>pro</em> Converter</h1>
 
-            <div>
-              <p>Check live foreign currency exchange rate</p>
-              <p>Enter Amount</p>
-              <p>$1.00</p>
-            </div>
+            <p>Select the base currency and the target currency and we'll show you the conversion rate.</p>
 
-            <div class="exchange__grid">
-              <div>
-                <label for="base-exchange">Base currency:</label>
+            <div class="exchange-wrapper">
+              <div class="exchange-wrapper__select">
+                <label for="base-exchange">Select base currency:</label>
                 <select id="base-exchange">
                   <option value="USD">United States Dollar ($)</option>
                   <option value="EUR">Euro (€)</option>
@@ -46,8 +42,8 @@
                 </select>
               </div>
 
-              <div>
-                <label for="target-exchange">Target currency:</label>
+              <div class="exchange-wrapper__select">
+                <label for="target-exchange">Select target currency:</label>
                 <select id="target-exchange">
                   <option value="USD">United States Dollar ($)</option>
                   <option value="EUR">Euro (€)</option>

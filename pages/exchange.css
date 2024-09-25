@@ -1,0 +1,4 @@
+.exchange__result {
+  display: flex;
+  column-gap: 5px;
+}
