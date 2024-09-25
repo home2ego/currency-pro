@@ -1,3 +1,2 @@
-const baseValue = sessionStorage.getItem('baseValue');
-const targetValue = sessionStorage.getItem('targetValue');
-console.log(baseValue, targetValue);
+const baseValue = localStorage.getItem('baseValue');
+const targetValue = localStorage.getItem('targetValue');
