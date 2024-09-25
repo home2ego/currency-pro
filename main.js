@@ -9,8 +9,16 @@ const targetCards = [...targetCurrency.querySelectorAll('.card')];
 // Function to handle active card in the corresponding container
 function handleActiveCard(container, clickedCard) {
   const active = container.querySelector('.card.active');
-  active?.classList.remove('active');
+
+  if (active) {
+    // If there is an active button(card), remove its active class and update its aria-checked attribute
+    active.classList.remove('active');
+    active.setAttribute('aria-checked', 'false');
+  }
+
+  // Add active class and set aria-checked to true for the clicked button(card)
   clickedCard.classList.add('active');
+  clickedCard.setAttribute('aria-checked', 'true');
 }
 
 // Function to add the active state to a new card and disable corresponding card in the target container

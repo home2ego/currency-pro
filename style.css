@@ -1,3 +1,4 @@
+/* Components */
 @import url(/components/_base.css);
 @import url(/components/container.css);
 @import url(/components/ax-button.css);
@@ -7,3 +8,6 @@
 @import url(/components/currency.css);
 @import url(/components/footer.css);
 @import url(/components/media.css);
+
+/* Pages */
+@import url(/pages/exchange.css);
