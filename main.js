@@ -51,7 +51,7 @@ function setBaseCurrencyCard(event) {
   handleActiveCard(baseCurrency, clickedCard);
 
   const baseValue = clickedCard.querySelector('[data-symbol]').dataset.symbol; // contains a symbol representing the selected currency
-  localStorage.setItem('baseValue', baseValue);
+  sessionStorage.setItem('baseValue', baseValue);
 
   checkTrackButtonState();
 }
@@ -64,7 +64,7 @@ function setTargetCurrencyCard(event) {
   handleActiveCard(targetCurrency, clickedCard);
 
   const targetValue = clickedCard.querySelector('[data-symbol]').dataset.symbol; // contains a symbol representing the selected currency
-  localStorage.setItem('targetValue', targetValue);
+  sessionStorage.setItem('targetValue', targetValue);
 
   checkTrackButtonState();
 }
