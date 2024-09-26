@@ -15,3 +15,9 @@ const findTarget = [...targetExchange.options].find((target) => target.value ===
 // Set selected attribute
 setSelectedAttr(findBase);
 setSelectedAttr(findTarget);
+
+// Dynamic import of the FetchWrapper class
+// const { default: FetchWrapper } = await import('...'); // Top-level await can be used without wrapping it into an async function
+// const API = new FetchWrapper('https://v6.exchangerate-api.com/v6/REPLACE_YOUR_API_KEY_HERE');
+
+const resultExchange = document.querySelector('#exchange__conversion');
