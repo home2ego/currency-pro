@@ -1,3 +1,5 @@
+import FetchWrapper from './FetchWrapper.js';
+
 const baseValue = sessionStorage.getItem('baseValue');
 const targetValue = sessionStorage.getItem('targetValue');
 
@@ -16,18 +18,10 @@ const findTarget = [...targetExchange].find((target) => target.value === targetV
 setSelectedAttr(findBase);
 setSelectedAttr(findTarget);
 
-// Declare API and result variables
-let API;
+// Instantiate API
+const API = new FetchWrapper('https://v6.exchangerate-api.com/v6/64a8977b260387cdf33333bf');
+
 const result = document.querySelector('#exchange__conversion');
-
-async function initializeAPI() {
-  // Dynamic import of the FetchWrapper class
-  const { default: FetchWrapper } = await import('./FetchWrapper.js');
-  API = new FetchWrapper('https://v6.exchangerate-api.com/v6/64a8977b260387cdf33333bf');
-
-  // Call getConversionRates after the API is initialized
-  getConversionRates();
-}
 
 function getConversionRates() {
   API.get(`/latest/${baseExchange.value}`).then((data) => {
@@ -35,13 +29,9 @@ function getConversionRates() {
   });
 }
 
-// Call the initialize function to set up the API
-initializeAPI();
+// Fetch conversion rates immediately
+getConversionRates();
 
-baseExchange.addEventListener('change', () => {
-  getConversionRates();
-});
-
-targetExchange.addEventListener('change', () => {
-  getConversionRates();
-});
+// Event listeners for base and target currency changes
+baseExchange.addEventListener('change', getConversionRates);
+targetExchange.addEventListener('change', getConversionRates);

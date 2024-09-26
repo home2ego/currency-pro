@@ -3,14 +3,13 @@ export default class FetchWrapper {
     this.baseURL = baseURL;
   }
 
-  async get(endpoint) {
+  get(endpoint) {
     return fetch(this.baseURL + endpoint).then((response) => response.json());
   }
 
   post(endpoint, body) {
     return this.#send('post', endpoint, body);
   }
-
   put(endpoint, body) {
     return this.#send('put', endpoint, body);
   }
@@ -18,7 +17,7 @@ export default class FetchWrapper {
     return this.#send('delete', endpoint, body);
   }
 
-  async #send(method, endpoint, body) {
+  #send(method, endpoint, body) {
     fetch(this.baseURL + endpoint, {
       method,
       headers: {
