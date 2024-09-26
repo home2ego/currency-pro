@@ -1,3 +1,14 @@
+.exchange {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.exchange__wrapper {
+  display: flex;
+  column-gap: 50px;
+}
+
 .exchange__result {
   display: flex;
   column-gap: 5px;
