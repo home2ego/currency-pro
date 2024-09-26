@@ -4,11 +4,7 @@ export default class FetchWrapper {
   }
 
   async get(endpoint) {
-    // return fetch(this.baseURL + endpoint).then((response) => response.json());
-    const response = await fetch(this.baseURL + endpoint);
-    const data = await response.json();
-
-    return data;
+    return fetch(this.baseURL + endpoint).then((response) => response.json());
   }
 
   post(endpoint, body) {
@@ -23,23 +19,12 @@ export default class FetchWrapper {
   }
 
   async #send(method, endpoint, body) {
-    // fetch(this.baseURL + endpoint, {
-    //   method,
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify(body),
-    // }).then((response) => response.json());
-
-    const response = await fetch(this.baseURL + endpoint, {
+    fetch(this.baseURL + endpoint, {
       method,
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(body),
-    });
-    const data = await response.json();
-
-    return data;
+    }).then((response) => response.json());
   }
 }

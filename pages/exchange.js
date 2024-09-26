@@ -9,15 +9,39 @@ function setSelectedAttr(currency) {
 }
 
 // Find base and target currencies based on the selected buttons
-const findBase = [...baseExchange.options].find((base) => base.value === baseValue);
-const findTarget = [...targetExchange.options].find((target) => target.value === targetValue);
+const findBase = [...baseExchange].find((base) => base.value === baseValue);
+const findTarget = [...targetExchange].find((target) => target.value === targetValue);
 
 // Set selected attribute
 setSelectedAttr(findBase);
 setSelectedAttr(findTarget);
 
-// Dynamic import of the FetchWrapper class
-// const { default: FetchWrapper } = await import('...'); // Top-level await can be used without wrapping it into an async function
-// const API = new FetchWrapper('https://v6.exchangerate-api.com/v6/REPLACE_YOUR_API_KEY_HERE');
+// Declare API and result variables
+let API;
+const result = document.querySelector('#exchange__conversion');
 
-const resultExchange = document.querySelector('#exchange__conversion');
+async function initializeAPI() {
+  // Dynamic import of the FetchWrapper class
+  const { default: FetchWrapper } = await import('./FetchWrapper.js');
+  API = new FetchWrapper('https://v6.exchangerate-api.com/v6/64a8977b260387cdf33333bf');
+
+  // Call getConversionRates after the API is initialized
+  getConversionRates();
+}
+
+function getConversionRates() {
+  API.get(`/latest/${baseExchange.value}`).then((data) => {
+    result.textContent = data.conversion_rates[targetExchange.value];
+  });
+}
+
+// Call the initialize function to set up the API
+initializeAPI();
+
+baseExchange.addEventListener('change', () => {
+  getConversionRates();
+});
+
+targetExchange.addEventListener('change', () => {
+  getConversionRates();
+});
