@@ -21,15 +21,15 @@
   text-align: center;
 }
 
-.currency h1 em {
-  color: #355fe5;
-}
-
 .cards-wrapper h3 {
   font-size: 28px;
   font-weight: 400;
 
   margin-bottom: 20px;
+}
+
+.currency__highlight {
+  color: #355fe5;
 }
 
 .cards {
