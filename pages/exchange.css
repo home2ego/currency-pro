@@ -1,15 +1,30 @@
 .exchange {
   display: flex;
   flex-direction: column;
-  row-gap: 20px;
+  row-gap: 30px;
+
+  max-width: 450px;
+  margin: 0 auto;
 }
 
 .exchange__wrapper {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   column-gap: 50px;
+  place-items: center;
 }
 
 .exchange__result {
-  display: flex;
-  column-gap: 5px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+
+  font-size: 30px;
+}
+
+@media (max-width: 480px) {
+  .exchange__wrapper {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+  }
 }

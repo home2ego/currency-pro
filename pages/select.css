@@ -1,9 +1,11 @@
-.select__currency {
-  display: flex;
-  flex-direction: column;
-  row-gap: 10px;
+.select__currency label {
+  display: block;
+  font-weight: 600;
+
+  margin-bottom: 10px;
 }
 
-.select__currency label {
-  font-weight: 600;
+.select__currency select {
+  padding: 10px 15px;
+  border-radius: 8px;
 }
